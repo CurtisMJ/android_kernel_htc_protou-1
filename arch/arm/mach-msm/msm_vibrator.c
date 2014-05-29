@@ -356,6 +356,12 @@ void __init msm_init_pmic_vibrator(int level)
 	device_remove_attrs(pmic_vibrator.dev);*/
 }
 
+int _vibrate(int time)
+{
+	vibrator_enable(&pmic_vibrator, time);
+	return 0;
+}
+
 MODULE_DESCRIPTION("timed output pmic vibrator device");
 MODULE_LICENSE("GPL");
 
